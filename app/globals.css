@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Bryndan Write';
+  src: url('/fonts/BryndanWriteBook-nGPM.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@utility font-bryndan {
+  font-family: 'Bryndan Write', 'Segoe Script', cursive;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #000000;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: 'Bryndan Write', 'Segoe Script', cursive;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Override monospace utility to use Bryndan Write globally */
+.font-mono {
+  font-family: 'Bryndan Write', 'Segoe Script', cursive;
+}
+
+/* Button base */
+.btn {
+  display: inline-block;
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  font-family: 'Bryndan Write', 'Segoe Script', cursive;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* White filled button */
+.btn-white {
+  display: inline-block;
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  color: #000000;
+  padding: 0.5rem 1.25rem;
+  font-family: 'Bryndan Write', 'Segoe Script', cursive;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-white:hover {
+  background: transparent;
+  color: #ffffff;
+}
+
+/* Section divider */
+.section-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
