@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Sponsor & Partner",
+  description:
+    "Albert School e Italian Founders Fund camminano con TeenVentures. Scopri chi sostiene il primo programma di imprenditoria per under-20 italiani.",
+};
 
 export default function SponsorPartnerPage() {
   return (

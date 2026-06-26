@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Contatti",
+  description: "Contatta TeenVentures su LinkedIn e Instagram.",
+};
 
 export default function ContattiPage() {
   return (

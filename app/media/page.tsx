@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Media",
+  description:
+    "Forbes Italia, Università Federico II, Caserta Web e altri hanno parlato di TeenVentures. Leggi la rassegna stampa.",
+};
 
 const ARTICLES = [
   {

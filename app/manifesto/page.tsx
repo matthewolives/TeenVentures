@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Manifesto",
+  description:
+    "Il talento non può e non deve aspettare. TeenVentures esiste per dare voce e strumenti a ogni giovane italiano che ha qualcosa da dire.",
+};
 
 export default function ManifestoPage() {
   return (

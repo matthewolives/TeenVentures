@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "After Hours",
+  description:
+    "Una serie di eventi serali aperti a tutti gli adolescenti italiani. Builders Talk, Demo Night, Tech Night: incontra chi ha costruito qualcosa di reale.",
+};
 
 const FORMAT_CARDS = [
   {

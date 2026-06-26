@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Vol.1 — 2026",
+  description:
+    "La prima edizione di TeenVentures: 20 adolescenti, 9 città italiane, 8 workshop, Demo Day a Milano. Scopri come è andata.",
+};
 
 const STATS = [
   { value: "20", label: "partecipanti" },
