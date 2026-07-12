@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://teen-ventures-eight.vercel.app";
+const BASE_URL = "https://www.teenventures.it";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
