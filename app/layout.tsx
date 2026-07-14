@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "TeenVentures è il primo programma di imprenditoria per adolescenti italiani. Un posto dove i ragazzi più ambiziosi d'Italia si incontrano, imparano e iniziano a costruire.",
   metadataBase: new URL("https://www.teenventures.it"),
+  alternates: {
+    canonical: "https://www.teenventures.it",
+  },
   openGraph: {
     siteName: "TeenVentures",
     locale: "it_IT",
