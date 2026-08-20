@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "After Hours", href: "/after-hours" },
   { label: "Manifesto", href: "/manifesto" },
-  { label: "Sponsor & Partner", href: "/sponsor-partner" },
   { label: "Media", href: "/media" },
   { label: "Contatti", href: "/contatti" },
 ];
