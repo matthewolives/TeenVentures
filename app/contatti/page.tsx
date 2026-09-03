@@ -36,6 +36,14 @@ export default function ContattiPage() {
             >
               Instagram →
             </a>
+            <a
+              href="https://www.tiktok.com/@teenventures_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bryndan text-3xl md:text-4xl text-white hover:text-white/60 transition-colors w-fit"
+            >
+              TikTok →
+            </a>
           </div>
         </section>
       </main>

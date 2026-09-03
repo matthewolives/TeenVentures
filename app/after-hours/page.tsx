@@ -90,28 +90,6 @@ export default async function AfterHoursPage() {
 
         <div className="section-divider" />
 
-        {/* Format cards */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-          <h2 className="font-mono text-xs tracking-widest text-white/50 uppercase mb-10">
-            I format
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {FORMAT_CARDS.map((card) => (
-              <div
-                key={card.name}
-                className="border border-white/20 p-7 flex flex-col gap-4 hover:border-white/40 transition-colors"
-              >
-                <h3 className="font-bryndan text-3xl text-white">{card.name}</h3>
-                <p className="font-mono text-sm text-white/60 leading-relaxed">
-                  {card.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="section-divider" />
-
         {/* Events section */}
         <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
           {hasEvents ? (
@@ -152,11 +130,10 @@ export default async function AfterHoursPage() {
           ) : (
             <div className="text-center">
               <p className="font-bryndan text-4xl md:text-5xl text-white mb-6">
-                Gli After Hours torneranno presto.
+                Unisciti al gruppo WhatsApp
               </p>
               <p className="font-mono text-lg text-white/60 mb-8 leading-relaxed max-w-xl mx-auto">
-                Stiamo preparando i prossimi appuntamenti. Entra nel gruppo WhatsApp per essere
-                il primo a sapere date, ospiti e come partecipare.
+                Resta aggiornato su tutte le novità ed iniziative di TeenVentures
               </p>
               <a
                 href="https://chat.whatsapp.com/Io3E85jCHee4vIMJICLuei?mode=gi_t"
