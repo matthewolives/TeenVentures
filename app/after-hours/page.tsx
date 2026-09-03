@@ -51,7 +51,6 @@ export default async function AfterHoursPage() {
     <>
       <Navbar />
       <main className="flex-1 pt-16">
-        <AfterHoursScroller />
         {/* Header */}
         <section className="max-w-7xl mx-auto px-16 md:px-24 py-20 md:py-28">
           <h1 className="font-bryndan text-5xl md:text-6xl text-white leading-tight max-w-3xl">
@@ -70,13 +69,20 @@ export default async function AfterHoursPage() {
 
         <div className="section-divider" />
 
-        {/* Events section */}
+        {/* Events scroller */}
+        <section className="py-16 md:py-24">
+          <h2 className="font-bryndan text-4xl md:text-5xl text-white mb-10 max-w-7xl mx-auto px-16 md:px-24">
+            Iscriviti ai prossimi After Hours
+          </h2>
+          <AfterHoursScroller />
+        </section>
+
+        <div className="section-divider" />
+
+        {/* Events section (Luma) */}
         {hasEvents && (
           <>
             <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-              <h2 className="font-bryndan text-4xl md:text-5xl text-white mb-10">
-                Iscriviti ai prossimi After Hours
-              </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {upcomingEvents.map((event) => (
                   <a
