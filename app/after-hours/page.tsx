@@ -6,23 +6,8 @@ import AfterHoursScroller from "@/components/AfterHoursScroller";
 export const metadata: Metadata = {
   title: "After Hours",
   description:
-    "Una serie di eventi serali aperti a tutti gli adolescenti italiani. Builders Talk, Demo Night, Tech Night: incontra chi ha costruito qualcosa di reale.",
+    "Una serie di eventi serali aperti a tutti gli adolescenti italiani. Incontra chi ha costruito qualcosa di reale.",
 };
-
-const FORMAT_CARDS = [
-  {
-    name: "Builders Talk",
-    description: "Conversazioni con founders o operators del mondo startup.",
-  },
-  {
-    name: "Tech Night",
-    description: "Workshop pratici per costruire qualcosa.",
-  },
-  {
-    name: "Demo Night",
-    description: "Giovani founder mostrano i loro prodotti in diretta.",
-  },
-];
 
 type LumaEvent = {
   api_id: string;
@@ -79,11 +64,6 @@ export default async function AfterHoursPage() {
             <p>
               Ogni appuntamento porta una persona che ha costruito qualcosa di reale a parlare
               direttamente con chi sta cercando il proprio posto nel mondo startup.
-            </p>
-            <p>
-              Tre format: <span className="text-white">Builders Talk</span>, con ospiti che raccontano il loro percorso;{" "}
-              <span className="text-white">Demo Night</span>, dove i ragazzi presentano i loro progetti;{" "}
-              <span className="text-white">Tech Night</span>, workshop pratici per costruire qualcosa insieme.
             </p>
           </div>
         </section>
