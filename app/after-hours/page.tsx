@@ -91,11 +91,11 @@ export default async function AfterHoursPage() {
         <div className="section-divider" />
 
         {/* Events section */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-          {hasEvents ? (
-            <>
-              <h2 className="font-mono text-xs tracking-widest text-white/50 uppercase mb-10">
-                Prossimi eventi
+        {hasEvents && (
+          <>
+            <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+              <h2 className="font-bryndan text-4xl md:text-5xl text-white mb-10">
+                Iscriviti ai prossimi After Hours
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {upcomingEvents.map((event) => (
@@ -126,25 +126,29 @@ export default async function AfterHoursPage() {
                   </a>
                 ))}
               </div>
-            </>
-          ) : (
-            <div className="text-center">
-              <p className="font-bryndan text-4xl md:text-5xl text-white mb-6">
-                Unisciti al gruppo WhatsApp
-              </p>
-              <p className="font-mono text-lg text-white/60 mb-8 leading-relaxed max-w-xl mx-auto">
-                Resta aggiornato su tutte le novità ed iniziative di TeenVentures
-              </p>
-              <a
-                href="https://chat.whatsapp.com/Io3E85jCHee4vIMJICLuei?mode=gi_t"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-white text-black border border-white px-6 py-3 text-base hover:bg-transparent hover:text-white transition-colors"
-              >
-                Unisciti al gruppo WhatsApp →
-              </a>
-            </div>
-          )}
+            </section>
+            <div className="section-divider" />
+          </>
+        )}
+
+        {/* WhatsApp section */}
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+          <div className="text-center">
+            <p className="font-bryndan text-4xl md:text-5xl text-white mb-6">
+              Unisciti al gruppo WhatsApp
+            </p>
+            <p className="font-mono text-lg text-white/60 mb-8 leading-relaxed max-w-xl mx-auto">
+              Resta aggiornato su tutte le novità ed iniziative di TeenVentures
+            </p>
+            <a
+              href="https://chat.whatsapp.com/Io3E85jCHee4vIMJICLuei?mode=gi_t"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-black border border-white px-6 py-3 text-base hover:bg-transparent hover:text-white transition-colors"
+            >
+              Unisciti al gruppo WhatsApp →
+            </a>
+          </div>
         </section>
       </main>
       <Footer />
