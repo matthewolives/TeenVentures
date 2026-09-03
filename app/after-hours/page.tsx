@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AfterHoursScroller from "@/components/AfterHoursScroller";
 
 export const metadata: Metadata = {
   title: "After Hours",
@@ -66,6 +66,7 @@ export default async function AfterHoursPage() {
     <>
       <Navbar />
       <main className="flex-1 pt-16">
+        <AfterHoursScroller />
         {/* Header */}
         <section className="max-w-7xl mx-auto px-16 md:px-24 py-20 md:py-28">
           <h1 className="font-bryndan text-5xl md:text-6xl text-white leading-tight max-w-3xl">
