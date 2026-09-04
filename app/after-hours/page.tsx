@@ -116,7 +116,6 @@ export default async function AfterHoursPage() {
                 ))}
               </div>
             </section>
-            <div className="section-divider" />
           </>
         ) : (
           <section className="mx-auto max-w-7xl px-6 py-16 text-center md:py-24">
