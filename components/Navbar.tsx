@@ -74,6 +74,8 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 className={`font-mono text-sm tracking-wide transition-opacity hover:opacity-60 ${
+                  link.label === "After Hours" ? "nav-after-hours" : ""
+                } ${
                   isActive(link.href) ? "opacity-100 underline underline-offset-4" : "opacity-80"
                 }`}
               >
@@ -137,7 +139,9 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="font-mono text-sm text-white opacity-80 hover:opacity-100"
+                  className={`font-mono text-sm text-white opacity-80 hover:opacity-100 ${
+                    link.label === "After Hours" ? "nav-after-hours" : ""
+                  }`}
                 >
                   {link.label}
                 </Link>

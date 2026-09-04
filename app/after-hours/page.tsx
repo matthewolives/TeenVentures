@@ -50,15 +50,19 @@ export default async function AfterHoursPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 pt-16">
+      <main className="font-poppins flex-1 pt-16">
         {/* Header */}
-        <section className="max-w-7xl mx-auto px-16 md:px-24 py-20 md:py-28">
-          <h1 className="font-bryndan text-5xl md:text-6xl text-white leading-tight max-w-3xl">
-            TeenVentures After Hours
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+          <h1 className="max-w-3xl text-4xl leading-tight text-white md:text-5xl lg:text-6xl">
+            <span className="font-pacifico font-normal">After Hours</span>{" "}
+            <span className="font-teenventures text-xl md:text-2xl lg:text-3xl">
+              by Teen Ventures
+            </span>
           </h1>
-          <div className="font-mono text-xl text-white/60 mt-6 max-w-2xl leading-relaxed space-y-4">
+          <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-white/60 md:text-xl">
             <p>
-              After Hours è una serie di eventi serali aperti a tutti gli adolescenti italiani.
+              <span className="font-pacifico">After Hours</span> è una serie di eventi serali aperti
+              a tutti gli adolescenti italiani.
             </p>
             <p>
               Ogni appuntamento porta una persona che ha costruito qualcosa di reale a parlare
@@ -71,8 +75,8 @@ export default async function AfterHoursPage() {
 
         {/* Events scroller */}
         <section className="py-16 md:py-24">
-          <h2 className="font-bryndan text-4xl md:text-5xl text-white mb-10 max-w-7xl mx-auto px-16 md:px-24">
-            Iscriviti ai prossimi After Hours
+          <h2 className="mx-auto mb-10 max-w-7xl px-6 text-4xl text-white md:text-5xl">
+            Iscriviti ai prossimi <span className="font-pacifico">After Hours</span>
           </h2>
           <AfterHoursScroller />
         </section>
@@ -80,57 +84,62 @@ export default async function AfterHoursPage() {
         <div className="section-divider" />
 
         {/* Events section (Luma) */}
-        {hasEvents && (
+        {hasEvents ? (
           <>
-            <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+              <h2 className="mb-10 text-xs font-medium uppercase tracking-widest text-white/50">
+                Prossimi eventi
+              </h2>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 {upcomingEvents.map((event) => (
                   <a
                     key={event.api_id}
                     href={event.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-white/20 p-6 flex flex-col gap-4 hover:border-white/50 transition-colors group"
+                    className="group flex flex-col gap-4 border border-white/20 p-6 transition-colors hover:border-white/50"
                   >
                     {event.cover_url && (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={event.cover_url}
                         alt={event.name}
-                        className="w-full aspect-video object-cover"
+                        className="aspect-video w-full object-cover"
                       />
                     )}
-                    <p className="font-mono text-xs text-white/40">
-                      {formatDate(event.start_at)}
-                    </p>
-                    <h3 className="font-mono text-sm text-white group-hover:text-white/70 transition-colors">
+                    <p className="text-xs text-white/40">{formatDate(event.start_at)}</p>
+                    <h3 className="text-sm text-white transition-colors group-hover:text-white/70">
                       {event.name}
                     </h3>
-                    <span className="font-mono text-xs text-white/50 mt-auto">
-                      Registrati su Luma →
-                    </span>
+                    <span className="mt-auto text-xs text-white/50">Registrati su Luma →</span>
                   </a>
                 ))}
               </div>
             </section>
             <div className="section-divider" />
           </>
+        ) : (
+          <section className="mx-auto max-w-7xl px-6 py-16 text-center md:py-24">
+            <p className="text-4xl font-semibold text-white md:text-5xl">
+              Gli <span className="font-pacifico font-normal">After Hours</span> torneranno presto.
+            </p>
+          </section>
         )}
 
+        <div className="section-divider" />
+
         {/* WhatsApp section */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
           <div className="text-center">
-            <p className="font-bryndan text-4xl md:text-5xl text-white mb-6">
-              Unisciti al gruppo WhatsApp
-            </p>
-            <p className="font-mono text-lg text-white/60 mb-8 leading-relaxed max-w-xl mx-auto">
+            <p className="mb-6 text-4xl text-white md:text-5xl">Unisciti al gruppo WhatsApp</p>
+            <p className="mx-auto mb-8 max-w-xl text-lg leading-relaxed text-white/60">
               Resta aggiornato su tutte le novità ed iniziative di TeenVentures
             </p>
             <a
               href="https://chat.whatsapp.com/Io3E85jCHee4vIMJICLuei?mode=gi_t"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-black border border-white px-6 py-3 text-base hover:bg-transparent hover:text-white transition-colors"
+              className="inline-block border border-white bg-white px-6 py-3 text-base text-black transition-colors hover:bg-transparent hover:text-white"
             >
               Unisciti al gruppo WhatsApp →
             </a>
