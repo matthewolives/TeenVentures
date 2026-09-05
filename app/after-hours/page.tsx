@@ -50,7 +50,7 @@ export default async function AfterHoursPage() {
   return (
     <>
       <Navbar />
-      <main className="after-hours-page font-poppins flex-1 bg-white pt-16 text-black">
+      <main className="after-hours-page font-bryndan flex-1 bg-white pt-16 text-black">
         {/* Header */}
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
           <h1 className="mx-auto w-[90%] text-[2.058rem] leading-[1.2] text-black md:text-[2.618rem] lg:text-[3.33rem]">
@@ -125,16 +125,11 @@ export default async function AfterHoursPage() {
         {/* WhatsApp section */}
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
           <div className="text-center">
-            {!hasEvents && (
-              <p className="mb-4 text-[2.058rem] font-semibold leading-[1.2] text-black md:text-[2.618rem]">
-                Gli <span className="font-pacifico font-normal">After Hours</span> torneranno presto.
-              </p>
-            )}
             <p className="mb-6 text-[1.272rem] leading-[1.2] text-black md:text-[1.618rem]">
               Unisciti al gruppo WhatsApp
             </p>
             <p className="mx-auto mb-8 max-w-xl text-base leading-[1.618] text-black/60">
-              Resta aggiornato su tutte le novità ed iniziative di TeenVentures
+              Resta aggiornato su tutte le news di TeenVentures
             </p>
             <a
               href="https://chat.whatsapp.com/Io3E85jCHee4vIMJICLuei?mode=gi_t"
