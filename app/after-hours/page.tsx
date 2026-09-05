@@ -50,16 +50,16 @@ export default async function AfterHoursPage() {
   return (
     <>
       <Navbar />
-      <main className="font-poppins flex-1 pt-16">
+      <main className="after-hours-page font-poppins flex-1 bg-white pt-16 text-black">
         {/* Header */}
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-          <h1 className="max-w-3xl text-4xl leading-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="mx-auto w-[90%] text-[2.058rem] leading-[1.2] text-black md:text-[2.618rem] lg:text-[3.33rem]">
             <span className="font-pacifico font-normal">After Hours</span>{" "}
-            <span className="font-teenventures text-xl md:text-2xl lg:text-3xl">
+            <span className="font-teenventures text-base md:text-[1.272rem] lg:text-[1.618rem]">
               by Teen Ventures
             </span>
           </h1>
-          <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-white/60 md:text-xl">
+          <div className="mx-auto mt-6 w-[90%] space-y-4 text-base leading-[1.618] text-black/60 md:text-[1.272rem]">
             <p>
               <span className="font-pacifico">After Hours</span> è una serie di eventi serali aperti
               a tutti gli adolescenti italiani.
@@ -75,19 +75,21 @@ export default async function AfterHoursPage() {
 
         {/* Events scroller */}
         <section className="py-16 md:py-24">
-          <h2 className="mx-auto mb-10 max-w-7xl px-6 text-4xl text-white md:text-5xl">
-            Iscriviti ai prossimi <span className="font-pacifico">After Hours</span>
-          </h2>
+          <div className="mx-auto mb-10 max-w-7xl px-6">
+            <h2 className="mx-auto w-[90%] text-[2.058rem] leading-[1.2] text-black md:text-[2.618rem]">
+              Iscriviti ai prossimi <span className="font-pacifico">After Hours</span>
+            </h2>
+          </div>
           <AfterHoursScroller />
         </section>
 
         <div className="section-divider" />
 
         {/* Events section (Luma) */}
-        {hasEvents ? (
+        {hasEvents && (
           <>
             <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-              <h2 className="mb-10 text-xs font-medium uppercase tracking-widest text-white/50">
+              <h2 className="mb-10 text-[0.786rem] font-medium uppercase tracking-widest text-black/50">
                 Prossimi eventi
               </h2>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -97,7 +99,7 @@ export default async function AfterHoursPage() {
                     href={event.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-col gap-4 border border-white/20 p-6 transition-colors hover:border-white/50"
+                    className="group flex flex-col gap-4 border border-black/20 p-6 transition-colors hover:border-black/50"
                   >
                     {event.cover_url && (
                       // eslint-disable-next-line @next/next/no-img-element
@@ -107,38 +109,38 @@ export default async function AfterHoursPage() {
                         className="aspect-video w-full object-cover"
                       />
                     )}
-                    <p className="text-xs text-white/40">{formatDate(event.start_at)}</p>
-                    <h3 className="text-sm text-white transition-colors group-hover:text-white/70">
+                    <p className="text-[0.786rem] text-black/40">{formatDate(event.start_at)}</p>
+                    <h3 className="text-base text-black transition-colors group-hover:text-black/70">
                       {event.name}
                     </h3>
-                    <span className="mt-auto text-xs text-white/50">Registrati su Luma →</span>
+                    <span className="mt-auto text-[0.786rem] text-black/50">Registrati su Luma →</span>
                   </a>
                 ))}
               </div>
             </section>
+            <div className="section-divider" />
           </>
-        ) : (
-          <section className="mx-auto max-w-7xl px-6 py-16 text-center md:py-24">
-            <p className="text-4xl font-semibold text-white md:text-5xl">
-              Gli <span className="font-pacifico font-normal">After Hours</span> torneranno presto.
-            </p>
-          </section>
         )}
-
-        <div className="section-divider" />
 
         {/* WhatsApp section */}
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
           <div className="text-center">
-            <p className="mb-6 text-4xl text-white md:text-5xl">Unisciti al gruppo WhatsApp</p>
-            <p className="mx-auto mb-8 max-w-xl text-lg leading-relaxed text-white/60">
+            {!hasEvents && (
+              <p className="mb-4 text-[2.058rem] font-semibold leading-[1.2] text-black md:text-[2.618rem]">
+                Gli <span className="font-pacifico font-normal">After Hours</span> torneranno presto.
+              </p>
+            )}
+            <p className="mb-6 text-[1.272rem] leading-[1.2] text-black md:text-[1.618rem]">
+              Unisciti al gruppo WhatsApp
+            </p>
+            <p className="mx-auto mb-8 max-w-xl text-base leading-[1.618] text-black/60">
               Resta aggiornato su tutte le novità ed iniziative di TeenVentures
             </p>
             <a
               href="https://chat.whatsapp.com/Io3E85jCHee4vIMJICLuei?mode=gi_t"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border border-white bg-white px-6 py-3 text-base text-black transition-colors hover:bg-transparent hover:text-white"
+              className="inline-block border border-black bg-black px-6 py-3 text-base text-white transition-colors hover:bg-transparent hover:text-black"
             >
               Unisciti al gruppo WhatsApp →
             </a>

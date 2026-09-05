@@ -73,7 +73,7 @@ export default function AfterHoursScroller() {
   return (
     <section className="relative w-full overflow-hidden py-6 md:py-10" aria-label="Eventi After Hours">
       <div className="mx-auto w-full max-w-7xl px-6">
-        <div className="relative">
+        <div className="relative mx-auto w-[90%]">
           <div
             ref={trackRef}
             className="flex w-full snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -94,7 +94,7 @@ export default function AfterHoursScroller() {
                 onClick={(clickEvent) => {
                   if (!event.href) clickEvent.preventDefault();
                 }}
-                className="absolute bottom-16 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-lg transition hover:bg-black/80 aria-disabled:pointer-events-none aria-disabled:opacity-70 md:bottom-24 md:px-12 md:py-5"
+                className="absolute bottom-16 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black px-6 py-3 text-[0.786rem] font-semibold tracking-wide text-white shadow-lg transition hover:bg-black/80 aria-disabled:pointer-events-none aria-disabled:opacity-70 md:bottom-24 md:px-12 md:py-5"
               >
                 {event.label}
               </a>
@@ -105,7 +105,7 @@ export default function AfterHoursScroller() {
             type="button"
             aria-label="Evento precedente"
             onClick={() => goToEvent((currentEvent - 1 + EVENTS.length) % EVENTS.length)}
-            className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/40 bg-black/75 text-2xl text-white shadow-lg transition hover:border-[#d4a72c] hover:bg-[#d4a72c] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d4a72c] md:left-8"
+            className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/40 bg-black/75 text-2xl text-white shadow-lg transition hover:border-[#f4b940] hover:bg-[#f4b940] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4b940] md:left-8"
           >
             <span aria-hidden="true">←</span>
           </button>
@@ -113,7 +113,7 @@ export default function AfterHoursScroller() {
             type="button"
             aria-label="Evento successivo"
             onClick={() => goToEvent((currentEvent + 1) % EVENTS.length)}
-            className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/40 bg-black/75 text-2xl text-white shadow-lg transition hover:border-[#d4a72c] hover:bg-[#d4a72c] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d4a72c] md:right-8"
+            className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/40 bg-black/75 text-2xl text-white shadow-lg transition hover:border-[#f4b940] hover:bg-[#f4b940] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4b940] md:right-8"
           >
             <span aria-hidden="true">→</span>
           </button>
