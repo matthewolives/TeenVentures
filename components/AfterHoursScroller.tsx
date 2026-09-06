@@ -9,7 +9,7 @@ const EVENTS = [
     label: "Iscriviti Ora",
     href: "https://luma.com/m7t3h30h",
   },
-  { image: "/soon.png", alt: "Coming Soon", label: "In Arrivo" },
+  { image: "/Gaia.png", alt: "After Hours w/ Gaia Manzone", label: "Iscriviti Ora" },
   {
     image: "/Mirko.png",
     alt: "After Hours w/ Mirko Belleri",
