@@ -4,18 +4,12 @@ import { useEffect, useRef, useState } from "react";
 
 const EVENTS = [
   {
-    image: "/Annalisa.png",
-    alt: "After Hours w/ Annalisa Puligheddu",
-    label: "Iscriviti Ora",
-    href: "https://luma.com/m7t3h30h",
-  },
-  { image: "/soon.png", alt: "Coming Soon", label: "In Arrivo" },
-  {
     image: "/Mirko.png",
     alt: "After Hours w/ Mirko Belleri",
     label: "Iscriviti Ora",
     href: "https://luma.com/9a7mdtq5",
   },
+  { image: "/soon.png", alt: "Coming Soon", label: "In Arrivo" },
   { image: "/soon.png", alt: "Coming Soon", label: "In Arrivo" },
 ];
 
