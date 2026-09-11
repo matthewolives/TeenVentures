@@ -65,7 +65,7 @@ export default function Home() {
             <div className="border border-white/30 p-8 flex flex-col gap-6 hover:border-white/60 transition-colors">
               <span className="font-mono text-xs text-white/40 tracking-widest">02</span>
               <div>
-                <h3 className="font-bryndan text-4xl text-white mb-3">After Hours</h3>
+                <h3 className="font-pacifico text-4xl font-normal text-white mb-3">After Hours</h3>
                 <p className="font-mono text-sm text-white/70 leading-relaxed">
                   Webinar serali su imprenditoria e startup, aperti a tutti.
                 </p>

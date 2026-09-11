@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const EVENTS = [
+  { image: "/Gaia.png", alt: "After Hours w/ Gaia Manzone", label: "Iscriviti Ora" },
   {
     image: "/Mirko.png",
     alt: "After Hours w/ Mirko Belleri",
@@ -66,32 +67,52 @@ export default function AfterHoursScroller() {
 
   return (
     <section className="relative w-full overflow-hidden py-6 md:py-10" aria-label="Eventi After Hours">
-      <div
-        ref={trackRef}
-        className="mx-auto flex w-[92%] snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] md:w-[70%] [&::-webkit-scrollbar]:hidden"
-      >
-        {EVENTS.map((event, index) => (
+      <div className="mx-auto w-full max-w-7xl px-6">
+        <div className="relative mx-auto w-[90%]">
           <div
-            key={`${event.image}-${index}`}
-            ref={(card) => {
-              cardRefs.current[index] = card;
-            }}
-            className="relative aspect-video w-full shrink-0 snap-start overflow-hidden border border-black/15 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+            ref={trackRef}
+            className="flex w-full snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={event.image} alt={event.alt} className="h-full w-full object-cover" />
-            <a
-              href={event.href ?? "#"}
-              aria-disabled={!event.href}
-              onClick={(clickEvent) => {
-                if (!event.href) clickEvent.preventDefault();
+          {EVENTS.map((event, index) => (
+            <div
+              key={`${event.image}-${index}`}
+              ref={(card) => {
+                cardRefs.current[index] = card;
               }}
-              className="absolute bottom-16 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-lg transition hover:bg-black/80 aria-disabled:pointer-events-none aria-disabled:opacity-70 md:bottom-24 md:px-12 md:py-5"
+              className="relative aspect-video w-full shrink-0 snap-start overflow-hidden border border-black/15 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
             >
-              {event.label}
-            </a>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={event.image} alt={event.alt} className="h-full w-full object-cover" />
+              <a
+                href={event.href ?? "#"}
+                aria-disabled={!event.href}
+                onClick={(clickEvent) => {
+                  if (!event.href) clickEvent.preventDefault();
+                }}
+                className="absolute bottom-16 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black px-6 py-3 text-[0.786rem] font-semibold tracking-wide text-white shadow-lg transition hover:bg-black/80 aria-disabled:pointer-events-none aria-disabled:opacity-70 md:bottom-24 md:px-12 md:py-5"
+              >
+                {event.label}
+              </a>
+            </div>
+            ))}
           </div>
-        ))}
+          <button
+            type="button"
+            aria-label="Evento precedente"
+            onClick={() => goToEvent((currentEvent - 1 + EVENTS.length) % EVENTS.length)}
+            className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/40 bg-black/75 text-2xl text-white shadow-lg transition hover:border-[#f4b940] hover:bg-[#f4b940] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4b940] md:left-8"
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <button
+            type="button"
+            aria-label="Evento successivo"
+            onClick={() => goToEvent((currentEvent + 1) % EVENTS.length)}
+            className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/40 bg-black/75 text-2xl text-white shadow-lg transition hover:border-[#f4b940] hover:bg-[#f4b940] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4b940] md:right-8"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
       </div>
       <nav className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2" aria-label="Selezione evento">
         {EVENTS.map((event, index) => (
