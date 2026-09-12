@@ -88,7 +88,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
             <img src="/logo-startupitalia.webp" alt="StartupItalia" className="h-8 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-            <img src="/logo-forbes.webp" alt="Forbes" className="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img src="/logo-forbes.webp" alt="Forbes" className="h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
             <img src="/logo-radio24.webp" alt="Radio 24" className="h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
           </div>
         </section>
