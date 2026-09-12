@@ -86,16 +86,10 @@ export default function Home() {
           <p className="font-mono text-xs tracking-widest text-white/40 uppercase text-center mb-10">
             Come apparso su
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-0">
-            <div className="flex flex-1 justify-center min-w-[200px]">
-              <img src="/logo-startupitalia.webp" alt="StartupItalia" className="h-8 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="flex flex-1 justify-center min-w-[200px]">
-              <img src="/logo-forbes.webp" alt="Forbes" className="h-28 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="flex flex-1 justify-center min-w-[200px]">
-              <img src="/logo-radio24.webp" alt="Radio 24" className="h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-            </div>
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14">
+            <img src="/logo-startupitalia.webp" alt="StartupItalia" className="h-8 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img src="/logo-forbes.webp" alt="Forbes" className="h-36 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img src="/logo-radio24.webp" alt="Radio 24" className="h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
           </div>
         </section>
       </main>
