@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AfterHoursScroller from "@/components/AfterHoursScroller";
+import { fetchUpcomingEvents } from "@/lib/luma";
+
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "After Hours",
@@ -9,43 +12,8 @@ export const metadata: Metadata = {
     "Una serie di eventi serali aperti a tutti gli adolescenti italiani. Incontra chi ha costruito qualcosa di reale.",
 };
 
-type LumaEvent = {
-  api_id: string;
-  name: string;
-  start_at: string;
-  url: string;
-  cover_url?: string;
-};
-
-async function fetchUpcomingEvents(): Promise<LumaEvent[]> {
-  const calendarId = process.env.LUMA_CALENDAR_API_ID;
-  if (!calendarId) return [];
-
-  try {
-    const now = new Date().toISOString();
-    const res = await fetch(
-      `https://api.lu.ma/public/v1/calendar/list-events?calendar_api_id=${calendarId}&after=${now}&series_mode=sessions`,
-      { next: { revalidate: 3600 } }
-    );
-    if (!res.ok) return [];
-    const data = await res.json();
-    return (data.entries ?? []).slice(0, 3).map((entry: { event: LumaEvent }) => entry.event);
-  } catch {
-    return [];
-  }
-}
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("it-IT", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
-
 export default async function AfterHoursPage() {
-  const upcomingEvents = await fetchUpcomingEvents();
-  const hasEvents = upcomingEvents.length > 0;
+  const { events, unavailable } = await fetchUpcomingEvents();
 
   return (
     <>
@@ -80,47 +48,10 @@ export default async function AfterHoursPage() {
               Iscriviti ai prossimi <span className="font-pacifico">After Hours</span>
             </h2>
           </div>
-          <AfterHoursScroller />
+          <AfterHoursScroller events={events} unavailable={unavailable} />
         </section>
 
         <div className="section-divider" />
-
-        {/* Events section (Luma) */}
-        {hasEvents && (
-          <>
-            <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-              <h2 className="mb-10 text-[0.786rem] font-medium uppercase tracking-widest text-black/50">
-                Prossimi eventi
-              </h2>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                {upcomingEvents.map((event) => (
-                  <a
-                    key={event.api_id}
-                    href={event.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex flex-col gap-4 border border-black/20 p-6 transition-colors hover:border-black/50"
-                  >
-                    {event.cover_url && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={event.cover_url}
-                        alt={event.name}
-                        className="aspect-video w-full object-cover"
-                      />
-                    )}
-                    <p className="text-[0.786rem] text-black/40">{formatDate(event.start_at)}</p>
-                    <h3 className="text-base text-black transition-colors group-hover:text-black/70">
-                      {event.name}
-                    </h3>
-                    <span className="mt-auto text-[0.786rem] text-black/50">Registrati su Luma →</span>
-                  </a>
-                ))}
-              </div>
-            </section>
-            <div className="section-divider" />
-          </>
-        )}
 
         {/* WhatsApp section */}
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
