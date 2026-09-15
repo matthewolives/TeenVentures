@@ -80,7 +80,7 @@ export default function AfterHoursScroller({ events, unavailable }: { events: Ca
             >
               <div className="aspect-video bg-black/5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={event.image} alt={event.name} className="h-full w-full object-contain" loading={index === 0 ? "eager" : "lazy"} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/soon.png"; }} />
+                <img src={event.image} alt={event.name} className="h-full w-full object-cover" loading={index === 0 ? "eager" : "lazy"} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/soon.png"; }} />
               </div>
               <div className="space-y-3 bg-white px-6 py-6 md:px-12">
                 <p className="text-sm text-black/60"><time dateTime={event.startAt}>{event.date} (ora italiana)</time> · {event.location}</p>
