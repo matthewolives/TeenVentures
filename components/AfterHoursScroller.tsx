@@ -101,7 +101,7 @@ export default function AfterHoursScroller({ events, unavailable }: { events: Ca
                   }}
                 />
               </div>
-              <div className="space-y-3 bg-white px-6 py-6 md:px-12">
+              <div className="space-y-3 bg-white px-6 py-6 text-center md:px-12">
                 <p className="text-sm text-black/60"><time dateTime={event.startAt}>{event.date} (ora italiana)</time> · {event.location}</p>
                 <h3 className="text-xl md:text-2xl">{event.name}</h3>
                 <a href={event.href} target="_blank" rel="noopener noreferrer" className="inline-block rounded-md bg-black px-6 py-3 text-white transition hover:bg-black/80">Iscriviti su Luma →</a>
