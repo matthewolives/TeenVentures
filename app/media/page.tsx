@@ -10,6 +10,11 @@ export const metadata: Metadata = {
 
 const ARTICLES = [
   {
+    source: "StartupItalia",
+    title: "A 25 anni crea un programma di imprenditoria per gli adolescenti italiani: «Il mio sogno è essere il modello che non ho avuto»",
+    href: "https://startupitalia.eu/lifestyle/a-25-anni-crea-un-programma-di-imprenditoria-per-gli-adolescenti-italiani-mattia-oliva-il-mio-sogno-e-essere-il-modello-che-non-ho-avuto/",
+  },
+  {
     source: "Forbes Italia",
     title: "TeenVentures a Milano: la carica degli under-20 che vogliono ridisegnare il futuro del business italiano",
     href: "https://nextleaders.forbes.it/articoli/teenventures-a-milano-la-carica-degli-under-20-che-vogliono-ridisegnare-il-futuro-del-business-italiano",
